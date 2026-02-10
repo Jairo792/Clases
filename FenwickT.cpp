@@ -47,11 +47,11 @@ void update(int i, ll k){
 void solve(){
     int n,q;
     cin >> n >> q;
-    vector<ll> after(n);
+    vector<ll> before(n);
 
     forn(i,n){
-        cin >> after[i];
-        update(i,after[i]);
+        cin >> before[i];
+        update(i,before[i]);
     }
 
     forn(i,q){
@@ -61,8 +61,8 @@ void solve(){
             int b;
             ll c;
             cin >> b >> c;
-            ll d = c - after[b-1];
-            after[b-1] = c;
+            ll d = c - before[b-1];
+            before[b-1] = c;
             update(b-1,d);
         }else {
             int l,r;
@@ -79,6 +79,3 @@ int main (){
      cin >> tt; 
     forn(TT,tt){solve();}
 }
-
-
-
